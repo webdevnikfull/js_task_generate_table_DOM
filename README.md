@@ -1,37 +1,43 @@
-1. Replace `<your_account>` with your Github username in the link
-    - [DEMO LINK](https://<your_account>.github.io/js_task_generate_table_DOM/)
-2. Follow [this instructions](https://mate-academy.github.io/layout_task-guideline/)
-    - Run `npm run test` command to test your code;
-    - Run `npm run test:only -- -n` to run fast test ignoring linter;
-    - Run `npm run test:only -- -l` to run fast test with additional info in console ignoring linter.
+# 🧪 QA Automation Portfolio: DOM Table Generation Validation
 
-### Task: Generate dashboard from JSON
+> About this repository: This project demonstrates automated UI testing of dynamic DOM manipulation (table generation algorithms from structured datasets) using Cypress. It also highlights a modern "Shift-Left" QA approach through extensive static code analysis and Continuous Integration (CI/CD).
 
-This task requires knowledge of how HTML table works. You can learn it here:
- - [MDN HTML table basics](https://developer.mozilla.org/en-US/docs/Learn/HTML/Tables/Basics)
+![Cypress](https://img.shields.io/badge/Cypress-17202C?style=for-the-badge&logo=cypress&logoColor=white)
+![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black)
+![GitHub Actions](https://img.shields.io/badge/GitHub_Actions-2088FF?style=for-the-badge&logo=github-actions&logoColor=white)
+![Static Analysis](https://img.shields.io/badge/Static_Analysis-4B32C3?style=for-the-badge&logo=eslint&logoColor=white)
 
-Okay, now we know what is a table, and can do some magic.
-In `main.js`, you already have imported file `people.json`. Variable `people` contains an array of people, you can check it by using `console.log`.
-Your task today is to convert this array to table rows.
+## 🎯 Project Overview
 
-Your layout for start: 
+This application is a Vanilla JavaScript implementation of a dynamic table generation mechanism based on structured dataset inputs (`people.json`).
 
-![Preview](./src/images/preview.png)
+As a QA Automation Engineer, my focus in this repository is to validate the accuracy of the DOM rendering and table generation logic, ensuring that data sources are correctly parsed and presented in the UI.
 
-From the preview, you can see that table has 6 headers, but our data does not contain age and century. Yes, you need to calculate them by yourself.
- 
-##### Steps to do this challenge:
-1) For each person from `people` array create table row with 6 table cells (name, gender, born, died, age, century)
-2) Find a table with class `dashboard` in the document.
-3) Append created row to table.
-4) Done.
+## 🛠️ QA Tech Stack & Tools
 
-Hints:
-- Age is `person.died - person.born`
-- Century:divide year of person's death by 100 `Math.ceil(person.died / 100)`
+* **E2E / UI Automation:** Cypress
+* **CI/CD Pipeline:** GitHub Actions (Automated test execution on push/PR)
+* **Static Code Analysis (Shift-Left QA):** ESLint, Stylelint, LintHTML, Prettier
+* **Core Technologies:** HTML5, SCSS, Vanilla JS (ES6+)
 
-Do not change styles or HTML layout in this task. Change only `main.js` file.
+## 📊 Test Strategy & Coverage
 
-Expected result:
+### 1. Automated UI Testing (Cypress)
+Located in `cypress/integration/taskGenerateTableDom.spec.js`, the test suite simulates real user interactions to verify:
+* Proper generation and rendering of table structures from dataset inputs.
+* Correct mapping of data attributes to table cells.
+* Stability and integrity of the DOM structure post-generation.
 
-![Preview](./src/images/reference.png)
+### 2. Continuous Integration (CI/CD)
+The project utilizes GitHub Actions (`.github/workflows/test.yml`) to enforce quality gates. Every commit automatically triggers a pipeline that:
+* Lints the HTML, CSS, and JS files to catch syntax and formatting issues early.
+* Runs the Cypress E2E test suite in a headless environment.
+
+## 🚀 How to Run the Tests Locally
+
+To evaluate the test scripts and static analysis tools on your local machine, follow these steps:
+
+### 1. Environment Setup
+Clone the repository and install the Node.js dependencies:
+```bash
+npm install
